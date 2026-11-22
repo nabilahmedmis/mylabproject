@@ -1,0 +1,371 @@
+:root {
+    --ink: #16302b;
+    --bg: #f4f5f0;
+    --line: #dfe3db;
+    --accent: #c47a0a;
+    --ok: #1d7a4d;
+    --warn: #b7791f;
+    --bad: #b42318;
+    --mut: #667470;
+}
+
+/* 2. Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: #1b2523;
+    font: 15px/1.5 "Segoe UI", system-ui, sans-serif;
+}
+
+/* 3. Main Layout */
+#app {
+    display: flex;
+    min-height: 100vh;
+}
+
+#login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.loginbox {
+    width: 340px;
+}
+
+.loginbox label {
+    margin-bottom: 12px;
+}
+
+/* 4. Sidebar Navigation */
+.side {
+    width: 230px;
+    flex-shrink: 0;
+    background: var(--ink);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.side h1 {
+    margin: 0 20px 18px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.side a {
+    display: block;
+    padding: 9px 20px;
+    color: #c9d8d0;
+    text-decoration: none;
+}
+
+.side a:hover,
+.side a.on {
+    background: #21463f;
+    color: #fff;
+}
+
+.side .me {
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+    font-size: 13px;
+    color: #9db3a9;
+}
+
+.side .me a {
+    display: inline;
+    padding: 0;
+    text-decoration: underline;
+}
+
+/* 5. Main Content */
+main {
+    flex: 1;
+    min-width: 0;
+    padding: 26px 30px;
+}
+
+/* 7. Cards and Grid Layout */
+.card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+}
+
+.grid {
+    display: grid;
+    gap: 16px;
+}
+
+.g3 {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.g2 {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+
+/* 8. Dashboard KPI Cards */
+.kpi {
+    border-left: 4px solid var(--accent);
+}
+
+.kpi small {
+    color: var(--mut);
+}
+
+.kpi b {
+    display: block;
+    font-size: 22px;
+}
+
+.kpi.red {
+    border-color: var(--bad);
+}
+
+/* 9. Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th,
+td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #eef1ea;
+    font-weight: 600;
+}
+
+td.n,
+th.n {
+    text-align: right;
+}
+
+/* 10. Forms and Input Fields */
+label {
+    display: block;
+    font-size: 13px;
+    color: var(--mut);
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    min-width: 130px;
+    padding: 8px;
+    margin-top: 3px;
+    border: 1px solid #c5ccc2;
+    border-radius: 6px;
+    font: inherit;
+    background: #fff;
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+}
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: end;
+}
+
+.filters label {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* 12. Buttons */
+.btn {
+    padding: 8px 16px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--ink);
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.btn.alt {
+    background: #fff;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+}
+
+.btn.del {
+    background: var(--bad);
+}
+
+/* 13. Status Badges */
+.b {
+    padding: 2px 9px;
+    border-radius: 99px;
+    font-size: 12px;
+    background: #e8ebe5;
+    text-transform: capitalize;
+}
+
+.b.ok {
+    background: #d9f0e3;
+    color: var(--ok);
+}
+
+.b.warn {
+    background: #fbecc8;
+    color: #7a5200;
+}
+
+.b.bad {
+    background: #fbdcd8;
+    color: var(--bad);
+}
+
+/* 14. Alerts and Text Colours */
+ul.al {
+    margin: 0;
+    padding-left: 18px;
+}
+
+ul.al li {
+    margin-bottom: 5px;
+}
+
+.t-bad {
+    color: var(--bad);
+}
+
+.t-warn {
+    color: var(--warn);
+}
+
+/* 15. Charts */
+.chart {
+    position: relative;
+    height: 270px;
+}
+
+.tabs {
+    margin-bottom: 8px;
+}
+
+.tabs button {
+    margin-right: 6px;
+}
+
+/* 16. Sale Entry Rows */
+.r {
+    display: grid;
+    grid-template-columns: 1fr 90px 100px 40px;
+    gap: 8px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+.r input,
+.r select {
+    margin: 0;
+}
+
+.lt {
+    text-align: right;
+}
+
+.totals {
+    text-align: right;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* 17. Invoice / Receipt */
+.receipt {
+    max-width: 640px;
+}
+
+.receipt .head {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 18. Toast Notification */
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+#toast.show {
+    opacity: 1;
+}
+
+/* 19. Responsive Design */
+@media (max-width: 760px) {
+    #app {
+        flex-direction: column;
+    }
+
+    .side {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .side .me {
+        position: static;
+        padding: 10px 20px;
+    }
+
+    main {
+        padding: 16px;
+    }
+}
+
+/* 20. Print Styles */
+@media print {
+    .side,
+    .noprint,
+    .filters,
+    #toast {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    .card {
+        border: 0;
+    }
+}

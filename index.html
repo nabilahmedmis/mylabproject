@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SalesDesk | Sales &amp; Customer Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Login screen -->
+<section id="login" hidden>
+    <form class="card loginbox" onsubmit="login(event)">
+        <h1>SalesDesk</h1>
+        <p class="muted">Sales &amp; customer management for small businesses</p>
+        <div id="lerr" class="muted"></div>
+        <label>Username <input id="lu" required autofocus></label>
+        <label>Password <input id="lp" type="password" required></label>
+        <button class="btn">Log in</button>
+        <p class="muted small">Demo: admin / admin123 &nbsp;|&nbsp; staff / staff123</p>
+    </form>
+</section>
+
+<!-- Main application -->
+<div id="app" hidden>
+    <nav class="side">
+        <h1>SalesDesk</h1>
+        <div id="nav"></div>
+        <div class="me" id="me"></div>
+    </nav>
+    <main><div id="content"></div></main>
+</div>
+
+<div id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
